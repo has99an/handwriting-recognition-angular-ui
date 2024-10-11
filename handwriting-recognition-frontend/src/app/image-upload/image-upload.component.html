@@ -1,0 +1,2 @@
+<input type="file" (change)="onFileSelected($event)" accept="image/*" />
+<img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" />
