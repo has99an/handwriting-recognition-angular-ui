@@ -1,0 +1,76 @@
+/* General container styling */
+.homepage-container {
+    background-color: white;      /* White background */
+    color: black;                 /* Black text */
+    text-align: center;           /* Center everything */
+    padding: 50px;                /* Add some padding */
+    min-height: 50vh;            /* Full height of viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+  }
+  
+  /* Styling for the logo image */
+  .logo {
+    width: 200px;  /* Adjust the size of the logo */
+    margin-bottom: 20px;  /* Space below the logo */
+  }
+  
+  /* Styling for the main title */
+  .title {
+    font-size: 48px;          /* Big title text */
+    font-weight: bold;        /* Bold for emphasis */
+    letter-spacing: 2px;      /* Slight letter spacing for a modern look */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the subtitle */
+  .subtitle {
+    font-size: 24px;          /* Modern large font */
+    margin-bottom: 20px;      /* Space below subtitle */
+    font-weight: 300;         /* Lighter font for a sleek look */
+  }
+  
+  /* Styling for the message text */
+  .message {
+    font-size: 18px;          /* Smaller but still noticeable */
+    font-weight: 400;
+  }
+  .button-container {
+    margin-top: 20px;
+}
+
+.btn-login, .btn-create-account {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn-login:hover, .btn-create-account:hover {
+    background-color: #333;
+}
+
+.btn-login:focus, .btn-create-account:focus {
+    outline: none;
+}
+  /* Adjust typography for smaller screens */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 36px;  /* Smaller font size for mobile */
+    }
+  
+    .subtitle {
+      font-size: 20px;
+    }
+  
+    .message {
+      font-size: 16px;
+    }
+  }
+  
