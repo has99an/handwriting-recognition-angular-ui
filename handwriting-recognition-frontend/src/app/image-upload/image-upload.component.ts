@@ -17,21 +17,25 @@ export class ImageUploadComponent {
   selectedFile: File | null = null; 
   apiResponse: any;
 
+  isFileSelected: boolean = false;
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
-      this.selectedFile = input.files[0];
-      console.log('Valgt fil:', this.selectedFile); 
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imageUrl = reader.result;
-      };
-      reader.readAsDataURL(input.files[0]);
+        this.selectedFile = input.files[0];
+        this.isFileSelected = true;  
+        console.log('File selected:', this.selectedFile); 
+        const reader = new FileReader();
+        reader.onload = () => {
+            this.imageUrl = reader.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        this.isFileSelected = false;  // Reset to false if no file is selected
     }
-  }
+}
   
   uploadImage() {
-    console.log('Upload-knap trykket'); // Debugging
+    console.log('Upload-knap trykket'); 
     if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile);

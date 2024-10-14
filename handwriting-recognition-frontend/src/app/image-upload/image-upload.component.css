@@ -1,0 +1,60 @@
+/* Tilføj til containeren for at centrere indholdet */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerer indholdet horisontalt */
+    justify-content: center; /* Centrerer indholdet vertikalt */
+    height: 100vh; /* Fuld højde */
+    padding: 20px;
+    background-color: #f5f5f5; /* Lys baggrund */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Blød skygge for dybde */
+    border-radius: 10px; /* Runde hjørner for containeren */
+}
+
+/* Stil til det uploadede billede */
+.image-preview {
+    max-width: 100%; /* Gør billedet responsivt */
+    height: auto; /* Beholder proportionerne */
+    border: 2px solid #007bff; /* Blå kant */
+    border-radius: 8px; /* Runde hjørner */
+    margin-top: 10px; /* Afstand til knappen */
+    transition: transform 0.3s; /* Blød overgang ved hover */
+}
+
+.image-preview:hover {
+    transform: scale(1.05); /* Forstørrelse ved hover */
+}
+
+/* Stil til upload-knappen */
+button {
+    padding: 12px 24px; /* Indre afstand */
+    background-color: #007bff; /* Blå baggrund */
+    color: white; /* Hvid tekst */
+    border: none; /* Ingen kant */
+    border-radius: 5px; /* Runde hjørner */
+    cursor: pointer; /* Vis håndcursor ved hover */
+    transition: background-color 0.3s, transform 0.3s; /* Blød overgang */
+    font-size: 1rem; /* Størrelse på tekst */
+    margin-top: 15px; /* Afstand mellem knappen og billedet */
+}
+
+button:hover {
+    background-color: #0056b3; /* Mørkere blå ved hover */
+    transform: translateY(-2px); /* Løft knappen lidt ved hover */
+}
+
+/* Stil til tekst */
+h1 {
+    font-size: 2.5rem; /* Større overskrift */
+    color: #333; /* Mørk tekst */
+    margin-bottom: 20px; /* Afstand til knappen */
+    text-align: center; /* Centrering */
+    font-family: 'Arial', sans-serif; /* Vælg en skrifttype */
+}
+
+p {
+    font-size: 1rem; /* Standard tekst størrelse */
+    color: #666; /* Lysere tekst */
+    text-align: center; /* Centrering */
+    margin-top: 10px; /* Afstand til andre elementer */
+}

@@ -1,8 +1,8 @@
-<input type="file" (change)="onFileSelected($event)" accept="image/*" />
-<img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" />
-<button (click)="uploadImage()">Upload Image</button>
-
-<!-- Add this section to display the API response -->
-<div *ngIf="apiResponse">
-    <h3>Predicted Letter: {{ apiResponse.predicted_letter }}</h3>
-  </div>
+<div class="container">
+    <h1>Upload Handwritten Image</h1>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <img *ngIf="imageUrl" [src]="imageUrl" class="image-preview" alt="Image preview" />
+    <button (click)="uploadImage()" [disabled]="!isFileSelected">Upload</button>
+    <p *ngIf="!isFileSelected">Please select a file before uploading.</p>
+    <p *ngIf="apiResponse">Predicted Letter: {{ apiResponse.predicted_letter }}</p>
+</div>
