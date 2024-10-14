@@ -7,13 +7,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
-// Define routes
-const routes: Routes = [
-  { path: '', component: HomepageComponent },  // Homepage route
-  { path: 'login', component: LoginComponent },  // Login route
-  { path: 'register', component: RegisterComponent }  // Register route
-];
+import { routes } from './app.routes';  // Import routes from app.routes.ts
 
 @NgModule({
   declarations: [
@@ -24,7 +18,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,  // Add FormsModule for forms functionality
+    FormsModule,  // Import FormsModule to enable ngModel
     RouterModule.forRoot(routes)  // Configure the router with routes
   ],
   providers: [],
