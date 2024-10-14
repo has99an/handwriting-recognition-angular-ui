@@ -1,16 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', component: HomepageComponent },  // Route to HomepageComponent
-  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },  // Lazy load LoginComponent
-  { path: 'register', loadComponent: () => import('./register/register.component').then(m => m.RegisterComponent) },  // Lazy load RegisterComponent
+  { path: '', loadComponent: () => import('./homepage/homepage.component').then(m => m.HomepageComponent) },  // Homepage route
+  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },  // Login page route
+  { path: 'register', loadComponent: () => import('./register/register.component').then(m => m.RegisterComponent) }  // Register page route
 ];
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

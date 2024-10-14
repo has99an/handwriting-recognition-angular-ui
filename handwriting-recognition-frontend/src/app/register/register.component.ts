@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @Component({
   selector: 'app-register',
+  standalone: true,  // Declare as a standalone component
+  imports: [FormsModule],  // Import FormsModule to enable ngModel
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
