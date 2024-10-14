@@ -1,3 +1,16 @@
-<h1>Velkommen til min app!</h1>
-<router-outlet></router-outlet>
-<app-image-upload></app-image-upload>
+<header>
+    <nav>
+        <a routerLink="/">Hjem</a>
+        <a routerLink="/historik">Historik</a>
+        <a routerLink="/profil">Profil</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <router-outlet></router-outlet>
+    <app-image-upload></app-image-upload> <!-- Dit billede-upload UI -->
+</div>
+
+<footer>
+    <p>&copy; 2024 Din App</p>
+</footer>

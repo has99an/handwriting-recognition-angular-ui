@@ -1,20 +1,56 @@
-/* app.component.css */
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Fyld hele højden af visningen */
-  }
-  
-  .content {
-    width: 100%;
-    max-width: 800px; /* Begræns maksimal bredde */
-  }
-  
-  .left-side {
-    margin: 20px 0;
-  }
-  
-  /* Tilføj flere stilarter efter behov */
-  
+body {
+  margin: 0; /* Fjerner standard margin */
+  display: flex; /* Brug flexbox til at arrangere elementer */
+}
+
+header {
+  background-color: #042842; /* Blå baggrund */
+  color: white; /* Hvid tekst */
+  padding: 15px; /* Indre afstand */
+  height: 100vh; /* Fylder hele højden af vinduet */
+  position: fixed; /* Fast positionering */
+  left: 0; /* Placerer til venstre */
+  top: 0; /* Placerer til toppen */
+  width: 250px; /* Gør navigationsbaren bredere */
+  z-index: 1000; /* Sørger for, at den er oven på andre elementer */
+}
+
+nav {
+  display: flex; /* Brug flexbox til at arrangere links vertikalt */
+  flex-direction: column; /* Vertikal retning */
+  align-items: center; /* Centrering af links */
+}
+
+nav a {
+  background-color: #1668c0; /* Baggrundsfarve for knapperne */
+  color: white; /* Hvid tekst */
+  text-decoration: none; /* Ingen understregning */
+  margin: 20px 0; /* Øget vertikal afstand mellem links */
+  padding: 15px 30px; /* Indre afstand for knapperne */
+  border-radius: 5px; /* Runde hjørner */
+  font-size: 1.2rem; /* Større skrifttype */
+  transition: box-shadow 0.5s; /* Blød overgang for skygge */
+  width: 100%; /* Gør knapperne 100% brede */
+  display: flex; /* Brug flexbox for at centrere teksten */
+  align-items: center; /* Vertikal centrering af tekst */
+  justify-content: center; /* Horisontal centrering af tekst */
+}
+
+nav a:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Skyggeeffekt ved hover */
+  background-color: #042b57; /* Mørkere blå ved hover */
+}
+
+.main-content {
+  margin-left: 250px; /* Giver plads til navigationsbaren */
+  padding: 20px; /* Indre afstand for hovedindholdet */
+  width: calc(100% - 250px); /* Gør hovedindholdet bredere */
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrerer horisontalt */
+  justify-content: center; /* Centrerer vertikalt */
+  height: 100%; /* Fylder hele højden af den højre sektion */
+}
