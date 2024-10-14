@@ -21,7 +21,7 @@ export class ImageUploadComponent {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
       this.selectedFile = input.files[0];
-      console.log('Valgt fil:', this.selectedFile); // Debugging
+      console.log('Valgt fil:', this.selectedFile); 
       const reader = new FileReader();
       reader.onload = () => {
         this.imageUrl = reader.result;
@@ -35,10 +35,11 @@ export class ImageUploadComponent {
     if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile);
-      this.http.post('http://127.0.0.1:8000/predict', formData).subscribe({
+      this.http.post('http://127.0.0.1:8000/predict', formData, { responseType: 'blob' }).subscribe({
         next: (response) => {
-          console.log('API-svar:', response);
-          this.apiResponse = response;
+          const blob = new Blob([response], { type: 'application/pdf' });
+          const url = window.URL.createObjectURL(blob);
+          window.open(url); // Åbner PDF'en i en ny fane
         },
         error: (error) => {
           console.error('Upload-fejl:', error);
@@ -48,5 +49,7 @@ export class ImageUploadComponent {
       console.error('Ingen billede valgt');
     }
   }
+  
+  
   
 }
