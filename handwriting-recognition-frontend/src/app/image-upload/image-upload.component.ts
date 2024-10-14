@@ -14,7 +14,8 @@ export class ImageUploadComponent {
   constructor(private http: HttpClient) {}
   
   imageUrl: string | ArrayBuffer | null = null;
-  selectedFile: File | null = null; // Tilføjet til at gemme den valgte fil
+  selectedFile: File | null = null; 
+  apiResponse: any;
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -37,6 +38,7 @@ export class ImageUploadComponent {
       this.http.post('http://127.0.0.1:8000/predict', formData).subscribe({
         next: (response) => {
           console.log('API-svar:', response);
+          this.apiResponse = response;
         },
         error: (error) => {
           console.error('Upload-fejl:', error);
