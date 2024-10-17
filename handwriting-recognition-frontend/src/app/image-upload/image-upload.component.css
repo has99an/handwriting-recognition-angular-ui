@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center; /* Centrerer indholdet horisontalt */
     justify-content: center; /* Centrerer indholdet vertikalt */
-    height: 100vh; /* Fuld højde */
+    height: 60vh; /* Fuld højde */
     padding: 20px;
     background-color: #f5f5f5; /* Lys baggrund */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Blød skygge for dybde */
@@ -28,7 +28,7 @@
 /* Stil til upload-knappen */
 button {
     padding: 12px 24px; /* Indre afstand */
-    background-color: #007bff; /* Blå baggrund */
+    background-color: #000000; /* Blå baggrund */
     color: white; /* Hvid tekst */
     border: none; /* Ingen kant */
     border-radius: 5px; /* Runde hjørner */
@@ -39,7 +39,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Mørkere blå ved hover */
+    background-color: #1d1e1f; /* Mørkere blå ved hover */
     transform: translateY(-2px); /* Løft knappen lidt ved hover */
 }
 
