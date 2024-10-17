@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';  // Import AuthService
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onRegister() {
     if (this.password !== this.confirmPassword) {
@@ -28,6 +29,8 @@ export class RegisterComponent {
       response => {
         console.log('Registration successful:', response);
         // Handle success (e.g., show a success message or redirect the user)
+        this.router.navigate(['/image-upload']);
+
       },
       (error: HttpErrorResponse) => {
         console.error('Registration failed:', error);
