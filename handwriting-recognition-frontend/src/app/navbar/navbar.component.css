@@ -1,0 +1,138 @@
+/* navbar.component.css */
+
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  background-color: #fff; /* Changed to white background */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 2px -2px gray; /* Optional: adds a subtle shadow */
+}
+
+/* Navbar inner container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Navbar logo */
+.navbar-logo a {
+  color: #000; /* Changed to black font */
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+/* Nav item */
+.nav-item {
+  height: 80px;
+}
+
+/* Nav links */
+.nav-links {
+  color: #000; /* Changed to black font */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Nav links hover effect */
+.nav-links:hover {
+  background-color: #000; /* Changed to black background */
+  color: #fff;            /* Changed to white font on hover */
+  transition: all 0.3s ease;
+}
+
+/* Menu icon for mobile */
+.menu-icon {
+  display: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  /* Hide nav menu */
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #fff; /* Changed to white background */
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    background: #fff; /* Changed to white background */
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  /* Menu icon */
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #000; /* Changed to black font */
+  }
+
+  /* Nav items in mobile view */
+  .nav-item {
+    width: 100%;
+  }
+
+  /* Nav links in mobile view */
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #000; /* Changed to black background */
+    color: #fff;            /* Changed to white font on hover */
+    transition: all 0.3s ease;
+  }
+}
