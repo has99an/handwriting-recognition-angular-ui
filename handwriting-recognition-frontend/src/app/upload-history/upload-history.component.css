@@ -1,0 +1,84 @@
+/* Move the content higher and center it */
+.upload-history-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Move content towards the top */
+    height: 70vh; /* Vertically centers, but more towards the top */
+    padding-top: 50px; /* Add some space at the top */
+    text-align: center;
+    background-color: #f5f5f5; /* Light gray background for contrast */
+  }
+  
+  /* Add some padding and style to the upload history */
+  .upload-history {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 900px;
+    border: 1px solid #000;
+  }
+  
+  /* Style the table */
+  .upload-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .upload-table th, .upload-table td {
+    padding: 12px;
+    border-bottom: 2px solid #000; /* Solid black borders */
+    text-align: left;
+  }
+  
+  .upload-table th {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  .upload-table td {
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .upload-table tr:nth-child(even) {
+    background-color: #f0f0f0; /* Lighter gray for alternating rows */
+  }
+  
+  /* Add styles for the view buttons */
+  .view-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  
+  
+  /* Style for the "No uploads found" message */
+  .no-uploads-message {
+    font-size: 1.2rem;
+    color: #000;
+    margin-top: 50px;
+  }
+  
+  /* Adjust text styling for the title */
+  .upload-history h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  

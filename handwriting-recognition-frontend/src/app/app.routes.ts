@@ -22,5 +22,12 @@ export const routes: Routes = [
       import('./image-upload/image-upload.component').then(
         (m) => m.ImageUploadComponent
       ),
-  }, // Image Upload page route
+  }, 
+  {
+  path: 'upload-history',
+  loadComponent: () =>
+    import('./upload-history/upload-history.component').then(
+      (m) => m.UploadHistoryComponent
+    ),
+}, // Upload History page route
 ];

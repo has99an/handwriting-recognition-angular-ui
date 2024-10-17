@@ -1,0 +1,32 @@
+<div class="upload-history-container">
+    <div *ngIf="uploads.length > 0" class="upload-history">
+      <h2>Upload History</h2>
+      <table class="upload-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Created At</th>
+            <th>Image</th>
+            <th>PDF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let upload of uploads">
+            <td>{{ upload.id }}</td>
+            <td>{{ upload.created_at }}</td>
+            <td>
+              <a [href]="upload.image" target="_blank" class="view-button">View Image</a>
+            </td>
+            <td>
+              <a [href]="upload.pdf" target="_blank" class="view-button">View PDF</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="uploads.length === 0" class="no-uploads-message">
+      <p>No uploads found.</p>
+    </div>
+  </div>
+  

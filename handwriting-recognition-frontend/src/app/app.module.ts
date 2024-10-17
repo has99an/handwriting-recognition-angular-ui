@@ -5,11 +5,14 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { routes } from './app.routes';  // Import routes from app.routes.ts
 import { HttpClientModule } from '@angular/common/http';  // Import HttpClientModule here
+import { UploadHistoryComponent } from './upload-history/upload-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,  // Only include non-standalone components here
+    HomepageComponent, 
+    
+    // Only include non-standalone components here
   ],
   imports: [
     HttpClientModule,  // Make sure HttpClientModule is included here
