@@ -1,5 +1,3 @@
-// image-upload.component.ts
-
 import { Component, OnInit } from '@angular/core'; // Import OnInit
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -14,6 +12,7 @@ import { SessionManagementService } from '../session-management.service'; // Imp
 })
 export class ImageUploadComponent implements OnInit { // Implement OnInit
   userEmail: string | null = null; // Property to hold the user's email
+  userId: number | null = null;    // Property to hold the user's ID
 
   imageUrl: string | ArrayBuffer | null = null;
   selectedFile: File | null = null;
@@ -26,13 +25,15 @@ export class ImageUploadComponent implements OnInit { // Implement OnInit
   ) {}
 
   ngOnInit() {
-    // Retrieve the user's email from the session
+    // Retrieve the user's email and id from the session
     const sessionData = this.sessionService.getSession();
-    if (sessionData && sessionData.email) {
+    if (sessionData) {
       this.userEmail = sessionData.email;
+      this.userId = sessionData.user_id;  // Retrieve user ID
       console.log('Logged-in user email:', this.userEmail);
+      console.log('Logged-in user ID:', this.userId);
     } else {
-      console.warn('No user email found in session.');
+      console.warn('No user data found in session.');
       // Optionally, redirect to the login page if not logged in
       // this.router.navigate(['/login']);
     }
@@ -59,6 +60,13 @@ export class ImageUploadComponent implements OnInit { // Implement OnInit
     if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile);
+  
+      // Append the user ID to the FormData
+      if (this.userId) {
+        formData.append('user_id', this.userId.toString());  // Ensure user_id is appended as a form field
+      }
+  
+      // Make the POST request
       this.http
         .post('http://127.0.0.1:8000/predict', formData, { responseType: 'blob' })
         .subscribe({
@@ -75,4 +83,5 @@ export class ImageUploadComponent implements OnInit { // Implement OnInit
       console.error('No image selected');
     }
   }
+  
 }

@@ -2,12 +2,16 @@
   <div class="navbar-container">
     <div class="navbar-logo-email">
       <div class="navbar-logo">
-        <a routerLink="/"></a>
+        <a routerLink="/">
+          <img src="solita-logo.PNG" alt="Logo" class="logo-icon">
+        </a>
       </div>
+      
       <div class="navbar-email" *ngIf="userEmail">
         {{ userEmail }}
       </div>
     </div>
+    
     <div class="menu-icon" (click)="toggleMenu()">
       <i class="fas" [class.fa-bars]="!menuActive" [class.fa-times]="menuActive"></i>
     </div>

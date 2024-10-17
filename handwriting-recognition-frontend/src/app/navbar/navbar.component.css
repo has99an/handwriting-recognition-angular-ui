@@ -6,7 +6,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.navbar-logo-email {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and email */
+}
+.navbar-email {
+  color: #000;
+  font-size: 1rem; /* Adjust font size as needed */
+  padding-left: 10px; /* Space between logo and email */
+  white-space: nowrap; /* Prevent email from wrapping */
+}
 /* Navbar container */
 .navbar {
   background-color: #fff; /* Changed to white background */
@@ -27,15 +37,17 @@
   max-width: 1300px;
 }
 
-/* Navbar logo */
 .navbar-logo a {
-  color: #000; /* Changed to black font */
+  display: flex;
+  align-items: center;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
+}
+.navbar-logo img.logo-icon {
+  height: 80px; /* Adjust the height as needed */
+  width: auto;  /* Maintain aspect ratio */
+  object-fit: contain;
 }
 
 /* Nav menu */
@@ -134,5 +146,14 @@
     background-color: #000; /* Changed to black background */
     color: #fff;            /* Changed to white font on hover */
     transition: all 0.3s ease;
+  }
+}
+/* Adjust for mobile view if necessary */
+@media screen and (max-width: 960px) {
+  .navbar-logo img.logo-icon {
+    height: 40px; /* Smaller logo for mobile view */
+  }
+  .navbar-email {
+    font-size: 0.9rem; /* Adjust font size for mobile */
   }
 }
