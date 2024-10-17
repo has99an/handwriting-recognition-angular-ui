@@ -1,5 +1,7 @@
 <div class="container">
     <h1>Upload Handwritten Image</h1>
+    <p *ngIf="userEmail">Logged in as: {{ userEmail }}</p>
+
     <input type="file" (change)="onFileSelected($event)" accept="image/*" />
     <img *ngIf="imageUrl" [src]="imageUrl" class="image-preview" alt="Image preview" />
     <button (click)="uploadImage()" [disabled]="!isFileSelected">Upload</button>
