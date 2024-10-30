@@ -15,10 +15,10 @@
             <td>{{ upload.id }}</td>
             <td>{{ upload.created_at }}</td>
             <td>
-              <a [href]="upload.image" target="_blank" class="view-button">View Image</a>
+              <button (click)="viewImage(upload)" class="view-button">View Image</button>
             </td>
             <td>
-              <a [href]="upload.pdf" target="_blank" class="view-button">View PDF</a>
+              <button (click)="viewPdf(upload)" class="view-button">View PDF</button>
             </td>
           </tr>
         </tbody>
